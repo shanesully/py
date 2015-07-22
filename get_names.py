@@ -15,6 +15,7 @@ if len(sys.argv) == 1:
 
 # XML file with string tags
 src = open(sys.argv[1])
+# Strip src file extension and append
 dest_name = str(sys.argv[1][:-4]) + "_names" + ".csv"
 dest = open(dest_name, 'w')
 
