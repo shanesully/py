@@ -4,7 +4,8 @@
 # 
 # sos
 #
-# strings.xml -> csv of name attribs
+# Creates a csv file of name attribs
+# based on a given strings.xml file
 #
 import sys
 from BeautifulSoup import BeautifulStoneSoup
