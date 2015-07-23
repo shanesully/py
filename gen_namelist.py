@@ -30,4 +30,4 @@ for tag in soup.findAll(['string', 'plurals']):
 
 # Create file of string names
 for word in words:
-    dest.write(word + ',')
+    dest.write(word + ',\n')
