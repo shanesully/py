@@ -22,13 +22,12 @@ dest = open(dest_name, 'w')
 
 soup = BeautifulStoneSoup(src)
 
-# Create list of string names
 words = []
 
 for tag in soup.findAll(['string', 'plurals']):
    words.append(tag['name'])
 
-# Create file of string names
+# Populate names file
 for word in words:
     dest.write(word + ',\n')
 
