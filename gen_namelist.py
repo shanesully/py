@@ -4,8 +4,8 @@
 # 
 # sos
 #
-# Creates a csv file of name attribs
-# based on a given strings.xml file
+# Generates a csv file of name attribs
+# from an xml file
 #
 import sys
 from BeautifulSoup import BeautifulStoneSoup
@@ -31,3 +31,5 @@ for tag in soup.findAll(['string', 'plurals']):
 # Create file of string names
 for word in words:
     dest.write(word + ',\n')
+
+print "Word count: {}".format(len(words))
