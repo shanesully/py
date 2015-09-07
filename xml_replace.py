@@ -13,9 +13,9 @@ with open(argv[1]) as f:
 with open(argv[2]) as f:
 	strings_file = f.read().splitlines()
 
-exp = re.compile(r'>.*?<')
+exp = re.compile(r">.*?<")
 
-with open(str(argv[1]) + '.new', 'w+') as output_file:
+with open(str(argv[1]) + ".new", "w+") as output_file:
 	for line, string in zip(xml_file, strings_file):
-		line = re.sub(exp, '>' + string + '<', line)
+		line = re.sub(exp, ">" + string + "<", line)
 		output_file.write(line + "\n")
