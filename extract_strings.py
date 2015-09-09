@@ -29,3 +29,4 @@ for word in words:
     dest.write(word + '\n')
 
 print "Word count: {}".format(len(words))
+print "{} file created".format(dest_name)
