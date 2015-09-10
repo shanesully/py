@@ -13,7 +13,7 @@ if len(sys.argv) <= 1:
 
 def create_basic_strings_file(files):
     """
-    Creates a new file of newline-terminated strings based on the strings
+    Creates a new file of newline-terminated strings based on the string
     attribute tags for every given xml file
     """
     for given_file in files:
