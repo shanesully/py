@@ -8,28 +8,34 @@ import sys
 from BeautifulSoup import BeautifulStoneSoup
 
 if len(sys.argv) <= 1:
-    print "Incorrect arguments\n\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
+    print "\n\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
     sys.exit()
 
-for given_file in sys.argv[1:]:
+def create_strings_file(files):
+    for given_file in files:
+        file_format = str(given_file).split('.')[1]
 
-    file_format = str(given_file).split('.')[1] 
+        if file_format == 'xml':
+            with open(given_file) as xml_source_file:
+                strings_file_name = str(xml_source_file.name).split('.')[0] + "_strings.txt"
 
-    if file_format == 'xml':
+                with open(strings_file_name, 'w+') as strings_file:
+                    soup = BeautifulStoneSoup(xml_source_file)
+                    strings = []
 
-        with open(given_file) as xml_source_file:
-            strings_file_name = str(xml_source_file.name).split('.')[0] + "_strings.txt"
+                    for tag in soup.findAll(['string', 'plurals']):
+                       strings.append(tag.text.encode('utf-8'))
 
-            with open(strings_file_name, 'w+') as strings_file:
-                soup = BeautifulStoneSoup(xml_source_file)
-                strings = []
+                    for string in strings:
+                        strings_file.write(string + '\n')
 
-                for tag in soup.findAll(['string', 'plurals']):
-                   strings.append(tag.text.encode('utf-8'))
+                    print "{} file created with {} strings".format(strings_file_name, len(strings))
+        else:
+            print "Ignoring {} as it is in .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
 
-                for string in strings:
-                    strings_file.write(string + '\n')
+def main():
+    if sys.argv[1] == '-s':
+        create_strings_file(sys.argv[2:])
 
-                print "{} file created with {} strings".format(strings_file_name, len(strings))
-    else:
-        print "Ignoring {} as it is in .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
+if __name__ == '__main__':
+    main()
