@@ -8,9 +8,9 @@
 import sys
 from BeautifulSoup import BeautifulStoneSoup
 
-if len(sys.argv) <= 1:
+
+def print_usage():
     print "\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
-    sys.exit()
 
 
 def create_basic_strings_file(files):
@@ -65,7 +65,14 @@ def main():
         create_basic_strings_file(sys.argv[2:])
     elif sys.argv[1] == '-k':
         create_multi_lang_dict(sys.argv[2:])
+    else:
+       print_usage() 
 
 
 if __name__ == '__main__':
+
+    if len(sys.argv) <= 1:
+        print_usage()
+        sys.exit()
+
     main()
