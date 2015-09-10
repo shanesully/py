@@ -42,7 +42,7 @@ def create_basic_strings_file(files):
 
 def create_multi_lang_dict(files):
     """
-    Return a dict of string attribs and values for every given xml file
+    Return a dict of string attribs and values from every given xml file
     """
     strings_dict = {}
 
