@@ -11,7 +11,7 @@ if len(sys.argv) <= 1:
     print "\n\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
     sys.exit()
 
-def create_strings_file(files):
+def create_basic_strings_file(files):
     """
     Creates a new file of newline-terminated strings based on the strings
     attribute tags for every given xml file
@@ -39,7 +39,7 @@ def create_strings_file(files):
 
 def main():
     if sys.argv[1] == '-s':
-        create_strings_file(sys.argv[2:])
+        create_basic_strings_file(sys.argv[2:])
 
 if __name__ == '__main__':
     main()
