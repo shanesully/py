@@ -30,7 +30,6 @@ for given_file in sys.argv[1:]:
                 for string in strings:
                     strings_file.write(string + '\n')
 
-                print "String count: {}".format(len(strings))
-                print "{} file created".format(strings_file_name)
+                print "{} file created with {} strings".format(strings_file_name, len(strings))
     else:
-        print "Ignoring {} as it is .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
+        print "Ignoring {} as it is in .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
