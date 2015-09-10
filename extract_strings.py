@@ -12,6 +12,10 @@ if len(sys.argv) <= 1:
     sys.exit()
 
 def create_strings_file(files):
+    """
+    Creates a new file of newline-terminated strings based on the strings
+    attribute tags for every given xml file
+    """
     for given_file in files:
         file_format = str(given_file).split('.')[1]
 
