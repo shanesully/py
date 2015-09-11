@@ -14,10 +14,10 @@ def print_usage():
 
 
 def create_strings_file(files):
-    """
+    '''
     Create a file of newline-terminated strings based on string
     attribute tags for every given xml file
-    """
+    '''
     for given_file in files:
         file_format = str(given_file).split('.')[1]
 
@@ -41,9 +41,9 @@ def create_strings_file(files):
 
 
 def create_language_dict(files):
-    """
+    '''
     Return a dict of string attribs and combined values from every given xml file
-    """
+    '''
     strings = {}
 
     for given_file in files:
