@@ -13,7 +13,7 @@ def print_usage():
     print "\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
 
 
-def create_basic_strings_file(files):
+def create_strings_file(files):
     """
     Create a file of newline-terminated strings based on string
     attribute tags for every given xml file
@@ -40,11 +40,11 @@ def create_basic_strings_file(files):
             print "Ignoring {} as it is in .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
 
 
-def create_multi_lang_dict(files):
+def create_language_dict(files):
     """
     Return a dict of string attribs and combined values from every given xml file
     """
-    strings_dict = {}
+    strings = {}
 
     for given_file in files:
         with open(given_file) as xml_source_file:
@@ -52,19 +52,19 @@ def create_multi_lang_dict(files):
 
             for tag in soup.findAll(['string', 'plurals']):
 
-                if str(tag['name']) in strings_dict:
-                    strings_dict[str(tag['name'])].append(tag.text.encode('utf-8'))
+                if str(tag['name']) in strings:
+                    strings[str(tag['name'])].append(tag.text.encode('utf-8'))
                 else:
-                    strings_dict[str(tag['name'])] = [ tag.text.encode('utf-8') ]
+                    strings[str(tag['name'])] = [ tag.text.encode('utf-8') ]
 
-    return strings_dict
+    return strings
 
 
 def main():
     if sys.argv[1] == '-s':
-        create_basic_strings_file(sys.argv[2:])
+        create_strings_file(sys.argv[2:])
     elif sys.argv[1] == '-k':
-        create_multi_lang_dict(sys.argv[2:])
+        create_language_dict(sys.argv[2:])
     else:
        print_usage() 
 
