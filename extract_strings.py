@@ -10,7 +10,10 @@ from BeautifulSoup import BeautifulStoneSoup
 
 
 def print_usage():
-    print "\nUsage:\n\n\t$ python {} example.xml ...\n".format(sys.argv[0])
+    print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES".format(sys.argv[0])
+    print "\nOptions:\n"
+    print "\t-k: Create language dictionary\n"
+    print "\t-s: Create .txt file of strings\n"
 
 
 def create_strings_file(files):
