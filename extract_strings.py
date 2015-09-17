@@ -28,6 +28,7 @@ def create_strings_file(files):
 
         if file_format == 'xml':
             with open(given_file) as xml_source_file:
+                # Strip old extensions and create new file name
                 strings_file_name = str(xml_source_file.name).split('.')[0] + "_strings.txt"
 
                 with open(strings_file_name, 'w+') as strings_file:
@@ -66,6 +67,7 @@ def create_language_dict(files):
 
 
 def main():
+
     if sys.argv[1] == '-s':
         create_strings_file(sys.argv[2:])
     elif sys.argv[1] == '-k':
