@@ -25,7 +25,7 @@ class Calculator(object):
         Break down the expression and populate the stacks with its tokens
         '''
         try:
-            self.expression_items = [ x for x in raw_input("Enter expression: ").split(' ') ]   
+            self.expression_items = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
             # Parse the expression to populate the stacks
             self.parse()
         except:
