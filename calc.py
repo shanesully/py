@@ -72,7 +72,6 @@ class Calculator(object):
                 # self.result must be cast to str as eval itself returns int
                 self.result = eval(str(self.result) + operator + operand)
 
-            print self.operator_stack
             return self.result
         except:
             # Probably an invalid expression
