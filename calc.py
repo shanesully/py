@@ -25,6 +25,7 @@ class Calculator(object):
         Break down the expression and populate the stacks with its tokens
         '''
         try:
+            # Our stacks are LIFO
             self.expression_items = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
             # Parse the expression to populate the stacks
             self.parse()
