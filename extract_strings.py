@@ -1,9 +1,8 @@
-#! /usr/local/bin/python
-# 
-# shanesully
-#
-# Extract strings from given xml files
-#
+'''
+shanesully
+
+XML string extractor
+'''
 
 import sys
 from BeautifulSoup import BeautifulStoneSoup
