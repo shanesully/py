@@ -10,6 +10,9 @@ from BeautifulSoup import BeautifulStoneSoup
 
 
 def print_usage():
+    '''
+    Print commandline usage and exit
+    '''
     print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES", \
           "\nOptions:\n", \
           "\t-k: Create language dictionary\n", \
