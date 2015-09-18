@@ -20,24 +20,13 @@ class Calculator(object):
         self.operand_stack = []
 
 
-    def tokenize_expression(self):
-        '''
-        Break down the expression and populate the stacks with its tokens
-        '''
-        try:
-            # Our stacks are LIFO
-            self.expression_items = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
-            # Parse the expression to populate the stacks
-            self.parse()
-        except:
-            raise ValueError("Invalid expression")
-
-
     def parse(self):
         '''
         Parse incoming expression to populate operator and
         operand stacks
         '''
+
+        self.expression_items = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
 
         # Python's supported operators
         legal_operators = ['+', '-', '*', '/', '%', '**', '//']
@@ -60,7 +49,7 @@ class Calculator(object):
         '''
         Evaluate the expression
         '''
-        self.tokenize_expression()
+        self.parse()
 
         try:
             # Initialize the result using the first operand on the stack
