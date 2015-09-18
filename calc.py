@@ -6,11 +6,9 @@ Calculator program
 
 class Calculator(object):
     '''
-    Simple stack-based calculator which supports prefix,
-    infix and postfix notation
+    Simple stack-based calculator which supports Polish prefix notation
 
-    Calculator objects retain all information for a single
-    expression
+    Calculator objects hold the all information for a single expression
     '''
 
 
@@ -18,6 +16,11 @@ class Calculator(object):
 
         self.operator_stack = []
         self.operand_stack = []
+    
+
+    def get_expression(self):
+        # Get an expression from the user and format it for our LIFO parser
+        self.expression = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
 
 
     def parse(self):
@@ -26,14 +29,12 @@ class Calculator(object):
         operand stacks
         '''
 
-        self.expression_items = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
-
         # Python's supported operators
         legal_operators = ['+', '-', '*', '/', '%', '**', '//']
 
         try:
             # Populate stacks
-            for x in self.expression_items:
+            for x in self.expression:
                 if x in legal_operators:
                     self.operator_stack.append(x)
                 elif x.isdigit():
@@ -49,6 +50,7 @@ class Calculator(object):
         '''
         Evaluate the expression
         '''
+        self.get_expression()
         self.parse()
 
         try:
