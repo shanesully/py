@@ -6,7 +6,7 @@ Calculator program
 
 class Calculator(object):
     '''
-    Simple stack-based calculator which supports Polish Prefix and 
+    Simple stack-based calculator with support  for Polish Prefix and 
     Reverse Polish notations
     
 
