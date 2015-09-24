@@ -17,7 +17,7 @@ def bubble_sort(numbers):
 def main():
     numbers = [int(arg) for arg in sys.argv[1:]]
 
-    print bubble_sort(numbers)
+    print(bubble_sort(numbers))
 
 if __name__ == '__main__':
     main()
