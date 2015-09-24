@@ -4,8 +4,6 @@
 import sys
 
 def bubble_sort(numbers):
-    i = 0
-    j = 0
 
     for i in range(len(numbers)):
         for j in range(len(numbers) - 1 - i):
