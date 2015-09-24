@@ -10,7 +10,7 @@ def print_usage_info():
     print("\nUsage:\n")
     print("\t$ python {} $files $new_extension\n".format(sys.argv[0]))
     print("Notes:\n")
-    print("\t- $files can be indidual files or a directory")
+    print("\t- $files can be any number of individual files or a directory")
     print("\t- $new_extension can omit a period\n")
 
 
@@ -21,6 +21,7 @@ def sanitize_extension(extension):
 
 
 def change_extension(files, new_extension):
+    # Change the extension of all source files to the provided new extension
     for a_file in files:
         # Strip old extension
         base = os.path.splitext(a_file)[0]
