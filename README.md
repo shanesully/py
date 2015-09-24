@@ -1,5 +1,5 @@
 # py
-Misc Python scripts
+Misc Python scripts and exercises
 
 All files are tested on Mac and sometimes Linux
 
