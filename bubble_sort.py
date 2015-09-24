@@ -15,7 +15,7 @@ def bubble_sort(numbers):
     return numbers
 
 def main():
-    numbers = [int(x) for x in sys.argv[1:]]
+    numbers = [int(arg) for arg in sys.argv[1:]]
 
     print bubble_sort(numbers)
 
