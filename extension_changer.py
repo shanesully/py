@@ -6,7 +6,12 @@ import sys
 
 
 def print_usage_info():
-    print("$ python {} $args $new_extension".format(sys.argv[0]))
+    # Commandline usage info
+    print("\nUsage:\n")
+    print("\t$ python {} $files $new_extension\n".format(sys.argv[0]))
+    print("Notes:\n")
+    print("\t- $files can be indidual files or a directory")
+    print("\t- $new_extension can omit a period\n")
 
 
 def sanitize_extension(extension):
