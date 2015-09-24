@@ -6,7 +6,7 @@ import sys
 
 
 def print_usage_info():
-    print "$ python {} $args $new_extension".format(sys.argv[0])
+    print("$ python {} $args $new_extension".format(sys.argv[0]))
 
 
 def sanitize_extension(extension):
