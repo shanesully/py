@@ -5,7 +5,7 @@ from sys import argv
 import re
 
 if len(argv) != 3:
-	exit("Incorrect num args\n\tRequires: $INPUT_FILE.xml $INPUT_STRINGS.txt")
+	exit("\nIncorrect num args\n\tRequires: $INPUT_FILE.xml $INPUT_STRINGS.txt\n")
 
 with open(argv[1]) as f:
 	xml_file = f.read().splitlines()
