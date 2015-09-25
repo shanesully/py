@@ -3,6 +3,10 @@
 
 import sys
 
+def display_commandline_usage_info():
+    print("\nUsage:")
+    print("\n\t$ python {} $NUMBERS ...\n".format(sys.argv[0]))
+
 def bubble_sort(numbers):
 
     for i in range(len(numbers)):
@@ -15,6 +19,11 @@ def bubble_sort(numbers):
     return numbers
 
 def main():
+
+    if len(sys.argv) <= 1:
+        display_commandline_usage_info()
+        exit()
+
     numbers = [int(arg) for arg in sys.argv[1:]]
 
     print(bubble_sort(numbers))
