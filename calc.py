@@ -22,7 +22,7 @@ class Calculator(object):
 
     def get_expression(self):
         # Get an expression from the user and format it for our LIFO parser
-        self.expression = reversed([ x for x in raw_input("Enter expression: ").split(' ') ])
+        self.expression = reversed([ x for x in input("Enter expression: ").split(' ') ])
 
 
     def parse(self):
@@ -77,13 +77,13 @@ class Calculator(object):
         Display object state
         '''
 
-        print "Operators: {}\nOperands: {}\n".format(self.operator_stack, self.operand_stack)
+        print("Operators: {}\nOperands: {}\n".format(self.operator_stack, self.operand_stack))
 
 
 def main():
     a_calculator = Calculator()
 
-    print a_calculator.evaluate()
+    print(a_calculator.evaluate())
 
 if __name__ == '__main__':
     main()
