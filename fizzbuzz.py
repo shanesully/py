@@ -1,12 +1,16 @@
 # shanesully
 
+fizzbuzz = []
+
 for num in [ num for num in range(1,101)]:
     if num%15 == 0:
-        print("Fizzbuzz!")
-    elif num%5 == 0:
-        print("Buzz!")
+        fizzbuzz.append("Fizzbuzz!")
     elif num%3 == 0:
-        print("Fizz!")
+        fizzbuzz.append("Fizz!")
+    elif num%5 == 0:
+        fizzbuzz.append("Buzz!")
     else:
-        print(num)
+        fizzbuzz.append(num)
+
+print(fizzbuzz)
 
