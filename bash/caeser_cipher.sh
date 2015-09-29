@@ -48,7 +48,7 @@ function encrypt {
     display $original_msg $ciphertext $plaintext
 }
 
-function get_new_msg {
+function get_msg {
     # Get message from user
     echo "Enter message or (q)uit?"
     read anwser
@@ -73,9 +73,9 @@ for a in ${BASH_ARGV[*]}; do
     encrypt $a
 done
 
-# Encrypt message from user until
-# they choose to quit
+# Run until user chooses to quit
 while :
 do
-    get_new_msg 
+    # Get new message
+    get_msg 
 done
