@@ -27,7 +27,7 @@ function caeser_decrypt {
     printf $plaintext
 }
 
-function display_output {
+function display {
     # Pretty-print cipher process
     printf "Original Message:\n$1\n"
     printf "Encrypted Message:\n$2\n"
@@ -35,7 +35,7 @@ function display_output {
     printf "\n"
 }
 
-function run_cipher_process {
+function encrypt {
     # Process messages
     # Original message
     original_msg=$1
@@ -45,7 +45,7 @@ function run_cipher_process {
     plaintext=$(caeser_decrypt $ciphertext)
 
     # Display content
-    display_output $original_msg $ciphertext $plaintext
+    display $original_msg $ciphertext $plaintext
 }
 
 function get_new_msg {
@@ -58,7 +58,7 @@ function get_new_msg {
     else
         printf ""
         # Run cipher process on message 
-        run_cipher_process $anwser 
+        encrypt $anwser 
     fi
 }
 
@@ -70,7 +70,7 @@ fi
 
 # Encrypt messages from commandline
 for a in ${BASH_ARGV[*]}; do
-    run_cipher_process $a
+    encrypt $a
 done
 
 # Encrypt message from user until
