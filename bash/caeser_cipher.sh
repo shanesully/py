@@ -1,7 +1,7 @@
 #!/bin/bash
 # shanesully 
 #
-# Caeser Cipher Encryption Script
+# Caeser Cipher Demo
 #   
 
 function print_usage {
