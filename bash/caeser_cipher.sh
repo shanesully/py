@@ -22,7 +22,7 @@ function caeser_encrypt {
 }
 
 function caeser_decrypt {
-    # Reverse Caeser Cipher
+    # Reverse Caeser Cipher encryption
     local plaintext=`echo $1 | tr 'X-ZA-Wx-za-w' 'A-Za-z'`
     printf $plaintext
 }
