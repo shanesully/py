@@ -11,6 +11,7 @@ function print_usage {
     printf "\t$ $0 $args\n"
     printf "\nNotes:\n"
     printf "\t- Run with or without arguments\n"
+    printf "\t- Run without arguments for usage info\n"
     printf "\n"
 }
 
