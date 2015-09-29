@@ -26,7 +26,7 @@ function caeser_decrypt {
     printf $plaintext
 }
 
-function display_cipher_output {
+function display_output {
     # Pretty-print cipher process
     printf "Original Message:\n$1\n"
     printf "Encrypted Message:\n$2\n"
@@ -44,7 +44,7 @@ function run_cipher_process {
     plaintext=$(caeser_decrypt $ciphertext)
 
     # Display content
-    display_cipher_output $original_msg $ciphertext $plaintext
+    display_output $original_msg $ciphertext $plaintext
 }
 
 function get_new_msg {
