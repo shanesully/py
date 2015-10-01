@@ -19,3 +19,4 @@ with open(str(argv[1]) + ".new", "w+") as output_file:
 	for line, string in zip(xml_file, strings_file):
 		line = re.sub(exp, ">" + string + "<", line)
 		output_file.write(line + "\n")
+
