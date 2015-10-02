@@ -71,6 +71,8 @@ def create_language_dict(files):
 
             language_dict_file.write("\n")
 
+        print "\n{} file created\n".format(language_dict_file.name)
+
 
 def main():
 
