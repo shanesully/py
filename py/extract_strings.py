@@ -12,11 +12,11 @@ def print_usage():
     """Print commandline usage and exit"""
     print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES", \
           "\nOptions:\n", \
-          "\t-k: Combine n number of strings.xml files into a single xml language file\n", \
-          "\t-s: Output all strings from a strings.xml file into a .txt file\n".format(sys.argv[0])
+          "\t-k: Combine n strings.xml file(s) into a single xml language file\n", \
+          "\t-s: Extract strings from a strings.xml file\n".format(sys.argv[0])
 
 
-def create_strings_file(files):
+def extract_strings(files):
     """Extract all strings from an strings.xml file"""
     for given_file in files:
         file_format = str(given_file).split('.')[1]
@@ -36,7 +36,7 @@ def create_strings_file(files):
                     for string in strings:
                         strings_file.write(string + '\n')
 
-                    print "{} file created with {} strings".format(strings_file_name, len(strings))
+                    print "Created {} containing {} strings".format(strings_file_name, len(strings))
         else:
             print "Ignoring {} as it is in .{} format and not .xml".format(given_file, str(given_file).split('.')[1])
 
@@ -72,7 +72,7 @@ def create_language_dict(files):
 def main():
 
     if sys.argv[1] == '-s':
-        create_strings_file(sys.argv[2:])
+        extract_strings(sys.argv[2:])
     elif sys.argv[1] == '-k':
         create_language_dict(sys.argv[2:])
     else:
