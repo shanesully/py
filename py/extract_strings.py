@@ -64,7 +64,7 @@ def create_language_dict(files):
             language_dict_file.write("<key>{}</key>\n".format(key))
 
             for value in value_list:
-                language_dict_file.write("<value>{}</value>\n".format(value.encode('utf8')))
+                language_dict_file.write("<string>{}</string>\n".format(value.encode('utf8')))
 
         print "\n{} file created\n".format(language_dict_file.name)
 
