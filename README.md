@@ -1,5 +1,5 @@
 # scripts
-Misc scripts and small programs in various languages
+Misc scripts for various common tasks
 
 All files are tested on Mac and sometimes Linux
 
