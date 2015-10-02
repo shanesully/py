@@ -57,7 +57,6 @@ def create_language_dict(files):
             soup = BeautifulStoneSoup(xml_source_file)
 
             for tag in soup.findAll(['string', 'plurals']):
-
                 if str(tag['name']) in strings:
                     strings[str(tag['name'])].append(tag.text)
                 else:
