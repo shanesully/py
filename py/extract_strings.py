@@ -63,7 +63,12 @@ def create_language_dict(files):
                 else:
                     strings[str(tag['name'])] = [tag.text]
 
-    return strings
+    with open("language_dict.txt", "w+") as language_dict_file:
+        for key, value_list in strings.iteritems():
+            language_dict_file.write("Key: {} Values: ".format(key))
+            for value in value_list:
+                language_dict_file.write("{}, ".format(value.encode('utf8')))
+            language_dict_file.write("\n")
 
 
 def main():
@@ -71,7 +76,7 @@ def main():
     if sys.argv[1] == '-s':
         create_strings_file(sys.argv[2:])
     elif sys.argv[1] == '-k':
-        create_language_dict(sys.argv[2:])
+        a= create_language_dict(sys.argv[2:])
     else:
        print_usage() 
 
