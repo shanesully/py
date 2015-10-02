@@ -42,7 +42,7 @@ def extract_strings(files):
 
 
 def create_language_dict(files):
-    """Combine n number of strings.xml files into a single xml language file"""
+    """Combine n strings.xml file(s) into a single xml language file"""
     strings = {}
 
     for given_file in files:
