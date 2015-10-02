@@ -19,10 +19,7 @@ def print_usage():
 
 
 def create_strings_file(files):
-    '''
-    Create a file of newline-terminated strings based on the string
-    attribute tags for every given xml file
-    '''
+    '''Extract all strings from an strings.xml file'''
     for given_file in files:
         file_format = str(given_file).split('.')[1]
 
@@ -47,9 +44,7 @@ def create_strings_file(files):
 
 
 def create_language_dict(files):
-    '''
-    Return a dict of string attributes and combined values from every given xml file
-    '''
+    '''Combine n number of strings.xml files into one language kvp file'''
     strings = {}
 
     for given_file in files:
