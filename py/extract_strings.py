@@ -9,9 +9,7 @@ from BeautifulSoup import BeautifulStoneSoup
 
 
 def print_usage():
-    '''
-    Print commandline usage and exit
-    '''
+    """Print commandline usage and exit"""
     print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES", \
           "\nOptions:\n", \
           "\t-k: Create language dictionary\n", \
@@ -19,7 +17,7 @@ def print_usage():
 
 
 def create_strings_file(files):
-    '''Extract all strings from an strings.xml file'''
+    """Extract all strings from an strings.xml file"""
     for given_file in files:
         file_format = str(given_file).split('.')[1]
 
@@ -44,7 +42,7 @@ def create_strings_file(files):
 
 
 def create_language_dict(files):
-    '''Combine n number of strings.xml files into a single kvp language file'''
+    """Combine n number of strings.xml files into a single kvp language file"""
     strings = {}
 
     for given_file in files:
