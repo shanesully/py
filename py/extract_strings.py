@@ -12,7 +12,7 @@ def print_usage():
     """Print commandline usage and exit"""
     print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES", \
           "\nOptions:\n", \
-          "\t-k: Combine n number of strings.xml files into a single kvp language .txt file\n", \
+          "\t-k: Combine n number of strings.xml files into a single xml language file\n", \
           "\t-s: Output all strings from a strings.xml file into a .txt file\n".format(sys.argv[0])
 
 
@@ -42,7 +42,7 @@ def create_strings_file(files):
 
 
 def create_language_dict(files):
-    """Combine n number of strings.xml files into a single kvp language file"""
+    """Combine n number of strings.xml files into a single xml language file"""
     strings = {}
 
     for given_file in files:
@@ -55,14 +55,16 @@ def create_language_dict(files):
                 else:
                     strings[str(tag['name'])] = [tag.text]
 
-    with open("language_dict.txt", "w+") as language_dict_file:
+    with open("language_dict.xml", "w+") as language_dict_file:
+        xml_header = '<?xml version="1.0" encoding="UTF-8"?>'
+
+        language_dict_file.write('{}\n'.format(xml_header))
+
         for key, value_list in strings.iteritems():
-            language_dict_file.write("Key: {} Values: ".format(key))
+            language_dict_file.write("<key>{}</key>\n".format(key))
 
             for value in value_list:
-                language_dict_file.write("{}, ".format(value.encode('utf8')))
-
-            language_dict_file.write("\n")
+                language_dict_file.write("<value>{}</value>\n".format(value.encode('utf8')))
 
         print "\n{} file created\n".format(language_dict_file.name)
 
