@@ -65,8 +65,10 @@ def create_language_dict(files):
     with open("language_dict.txt", "w+") as language_dict_file:
         for key, value_list in strings.iteritems():
             language_dict_file.write("Key: {} Values: ".format(key))
+
             for value in value_list:
                 language_dict_file.write("{}, ".format(value.encode('utf8')))
+
             language_dict_file.write("\n")
 
 
