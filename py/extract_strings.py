@@ -12,8 +12,8 @@ def print_usage():
     """Print commandline usage and exit"""
     print "\nUsage:\n\n\t$ python {} $OPTIONS $XML_FILES", \
           "\nOptions:\n", \
-          "\t-k: Create language dictionary\n", \
-          "\t-s: Create .txt file of strings\n".format(sys.argv[0])
+          "\t-k: Combine n number of strings.xml files into a single kvp language .txt file\n", \
+          "\t-s: Output all strings from a strings.xml file into a .txt file\n".format(sys.argv[0])
 
 
 def create_strings_file(files):
