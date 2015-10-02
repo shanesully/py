@@ -79,7 +79,7 @@ def main():
     if sys.argv[1] == '-s':
         create_strings_file(sys.argv[2:])
     elif sys.argv[1] == '-k':
-        a= create_language_dict(sys.argv[2:])
+        create_language_dict(sys.argv[2:])
     else:
        print_usage() 
 
