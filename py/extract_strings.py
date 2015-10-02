@@ -44,7 +44,7 @@ def create_strings_file(files):
 
 
 def create_language_dict(files):
-    '''Combine n number of strings.xml files into one language kvp file'''
+    '''Combine n number of strings.xml files into a single kvp language file'''
     strings = {}
 
     for given_file in files:
