@@ -4,6 +4,7 @@
 
 echo "Setting up vim auto completion...n"
 
+mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
 
 echo "Downloading YouCompleteMe..."
