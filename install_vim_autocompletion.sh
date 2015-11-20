@@ -2,7 +2,7 @@
 # Install and configure vim auto completion
 #
 
-echo "Setting up vim auto completion...n"
+echo "Setting up vim auto completion..."
 
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
@@ -12,7 +12,7 @@ echo "Downloading YouCompleteMe..."
     git clone https://github.com/Valloric/YouCompleteMe
 } &> /dev/null
 
-printf "Installing..."
+echo "Installing..."
 
 cd YouCompleteMe
 
