@@ -1,4 +1,4 @@
-# XML Processing Script
+# Merge xml translation files
 
 from sys import argv
 import re
