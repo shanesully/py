@@ -1,3 +1,3 @@
 # scripts
-Useful scripts for common tasks
+Scripts for common tasks
 
