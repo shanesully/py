@@ -1,6 +1,4 @@
-# shanesully
-# Install and configure vim auto completion
-#
+# Setup YouCompleteMe
 
 echo "Setting up vim auto completion..."
 
