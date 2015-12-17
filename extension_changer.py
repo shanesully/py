@@ -1,5 +1,4 @@
-# shanesully
-# File extensions changer
+# Change file extensions
 
 import os
 import sys
