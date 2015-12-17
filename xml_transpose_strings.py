@@ -1,5 +1,4 @@
 # XML Processing Script
-# shanesully01@gmail.com
 
 from sys import argv
 import re
