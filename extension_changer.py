@@ -20,7 +20,7 @@ def sanitize_extension(extension):
 
 
 def change_extension(files, new_extension):
-    # Change the extension of all source files to the provided new extension
+    # Change the extension of files provided to the new extension
     for a_file in files:
         # Strip old extension
         base = os.path.splitext(a_file)[0]
